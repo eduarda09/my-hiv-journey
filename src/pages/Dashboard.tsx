@@ -12,7 +12,14 @@ const Dashboard = () => {
         <p className="text-muted-foreground">Aqui está seu resumo de hoje</p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <MetricCard
+          title="Dias seguidos"
+          value="12"
+          subtitle="Cumprindo bem a agenda"
+          icon={<TrendingUp className="h-6 w-6" />}
+          variant="success"
+        />
         <MetricCard
           title="Adesão ao tratamento"
           value="87%"
@@ -28,6 +35,57 @@ const Dashboard = () => {
           variant="default"
         />
       </div>
+
+      <Card className="p-6 shadow-md">
+        <h3 className="font-semibold text-foreground mb-4 flex items-center gap-2">
+          <Heart className="h-5 w-5 text-primary" />
+          Humor da semana
+        </h3>
+        <div className="flex justify-between items-center gap-2">
+          <div className="flex flex-col items-center">
+            <div className="w-12 h-12 rounded-full bg-mood-happy flex items-center justify-center mb-1">
+              <span className="text-white font-semibold">5</span>
+            </div>
+            <span className="text-xs text-muted-foreground">Seg</span>
+          </div>
+          <div className="flex flex-col items-center">
+            <div className="w-12 h-12 rounded-full bg-mood-happy flex items-center justify-center mb-1">
+              <span className="text-white font-semibold">4</span>
+            </div>
+            <span className="text-xs text-muted-foreground">Ter</span>
+          </div>
+          <div className="flex flex-col items-center">
+            <div className="w-12 h-12 rounded-full bg-mood-neutral flex items-center justify-center mb-1">
+              <span className="text-white font-semibold">3</span>
+            </div>
+            <span className="text-xs text-muted-foreground">Qua</span>
+          </div>
+          <div className="flex flex-col items-center">
+            <div className="w-12 h-12 rounded-full bg-mood-happy flex items-center justify-center mb-1">
+              <span className="text-white font-semibold">4</span>
+            </div>
+            <span className="text-xs text-muted-foreground">Qui</span>
+          </div>
+          <div className="flex flex-col items-center">
+            <div className="w-12 h-12 rounded-full bg-mood-very-happy flex items-center justify-center mb-1">
+              <span className="text-white font-semibold">5</span>
+            </div>
+            <span className="text-xs text-muted-foreground">Sex</span>
+          </div>
+          <div className="flex flex-col items-center">
+            <div className="w-12 h-12 rounded-full bg-mood-happy flex items-center justify-center mb-1">
+              <span className="text-white font-semibold">4</span>
+            </div>
+            <span className="text-xs text-muted-foreground">Sáb</span>
+          </div>
+          <div className="flex flex-col items-center">
+            <div className="w-12 h-12 rounded-full bg-mood-neutral flex items-center justify-center mb-1">
+              <span className="text-white font-semibold">3</span>
+            </div>
+            <span className="text-xs text-muted-foreground">Dom</span>
+          </div>
+        </div>
+      </Card>
 
       <Card className="p-6 bg-gradient-hero shadow-md">
         <div className="flex items-center gap-4">

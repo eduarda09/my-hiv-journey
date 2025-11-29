@@ -4,7 +4,6 @@ import { Button } from "@/components/ui/button";
 import { Calendar } from "@/components/ui/calendar";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Label } from "@/components/ui/label";
-import { Checkbox } from "@/components/ui/checkbox";
 import MoodSelector from "@/components/MoodSelector";
 import { Badge } from "@/components/ui/badge";
 import { CalendarDays } from "lucide-react";
@@ -13,11 +12,6 @@ const Calendario = () => {
   const [date, setDate] = useState<Date | undefined>(new Date());
   const [mood, setMood] = useState(3);
   const [selectedSymptoms, setSelectedSymptoms] = useState<string[]>([]);
-  const [tasks, setTasks] = useState({
-    exercicio: false,
-    medicacao: false,
-    exame: false,
-  });
 
   const symptoms = [
     "Fadiga", "Dor de cabeça", "Náusea", "Febre",
@@ -84,47 +78,6 @@ const Calendario = () => {
               </div>
             </div>
 
-            <div>
-              <Label className="text-base font-semibold mb-3 block">Atividades</Label>
-              <div className="space-y-3">
-                <div className="flex items-center space-x-3 p-3 rounded-lg bg-muted">
-                  <Checkbox
-                    id="exercicio"
-                    checked={tasks.exercicio}
-                    onCheckedChange={(checked) =>
-                      setTasks({ ...tasks, exercicio: checked as boolean })
-                    }
-                  />
-                  <label htmlFor="exercicio" className="text-sm cursor-pointer flex-1">
-                    Fez exercício hoje?
-                  </label>
-                </div>
-                <div className="flex items-center space-x-3 p-3 rounded-lg bg-muted">
-                  <Checkbox
-                    id="medicacao"
-                    checked={tasks.medicacao}
-                    onCheckedChange={(checked) =>
-                      setTasks({ ...tasks, medicacao: checked as boolean })
-                    }
-                  />
-                  <label htmlFor="medicacao" className="text-sm cursor-pointer flex-1">
-                    Tomou a medicação?
-                  </label>
-                </div>
-                <div className="flex items-center space-x-3 p-3 rounded-lg bg-muted">
-                  <Checkbox
-                    id="exame"
-                    checked={tasks.exame}
-                    onCheckedChange={(checked) =>
-                      setTasks({ ...tasks, exame: checked as boolean })
-                    }
-                  />
-                  <label htmlFor="exame" className="text-sm cursor-pointer flex-1">
-                    Foi ao exame agendado?
-                  </label>
-                </div>
-              </div>
-            </div>
 
             <Button className="w-full" size="lg">
               Salvar registro
