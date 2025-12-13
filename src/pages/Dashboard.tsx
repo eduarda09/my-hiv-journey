@@ -6,7 +6,28 @@ import { NavLink } from "@/components/NavLink";
 
 const Dashboard = () => {
   return (
+
+
+
     <div className="space-y-6 animate-in fade-in duration-500">
+
+
+      <Card className="p-6 bg-gradient-hero shadow-md">
+        <div className="flex items-center gap-4">
+          <div className="p-4 bg-white/20 rounded-xl backdrop-blur-sm">
+            <Activity className="h-8 w-8 text-white" />
+          </div>
+          <div className="flex-1">
+            <h3 className="text-lg font-semibold text-white mb-1">Registro diário</h3>
+            <p className="text-white/90 text-sm">Como você está se sentindo hoje?</p>
+          </div>
+          <NavLink to="/calendario">
+            <Button variant="secondary" size="lg" className="font-semibold">
+              Registrar
+            </Button>
+          </NavLink>
+        </div>
+      </Card>
       <div>
         <h1 className="text-2xl font-bold text-foreground mb-2">Olá, bem-vindo!</h1>
         <p className="text-muted-foreground">Aqui está seu resumo de hoje</p>
@@ -84,23 +105,6 @@ const Dashboard = () => {
             </div>
             <span className="text-xs text-muted-foreground">Dom</span>
           </div>
-        </div>
-      </Card>
-
-      <Card className="p-6 bg-gradient-hero shadow-md">
-        <div className="flex items-center gap-4">
-          <div className="p-4 bg-white/20 rounded-xl backdrop-blur-sm">
-            <Activity className="h-8 w-8 text-white" />
-          </div>
-          <div className="flex-1">
-            <h3 className="text-lg font-semibold text-white mb-1">Registro diário</h3>
-            <p className="text-white/90 text-sm">Como você está se sentindo hoje?</p>
-          </div>
-          <NavLink to="/calendario">
-            <Button variant="secondary" size="lg" className="font-semibold">
-              Registrar
-            </Button>
-          </NavLink>
         </div>
       </Card>
 
