@@ -10,6 +10,8 @@ import Acompanhamento from "./pages/Acompanhamento";
 import Upload from "./pages/Upload";
 import NotFound from "./pages/NotFound";
 import Layout from "./components/Layout";
+import ProfissionalDashboard from './pages/Profissional';
+
 
 const queryClient = new QueryClient();
 
@@ -25,6 +27,7 @@ const App = () => (
           <Route path="/notificacoes" element={<Layout><Notificacoes /></Layout>} />
           <Route path="/acompanhamento" element={<Layout><Acompanhamento /></Layout>} />
           <Route path="/upload" element={<Layout><Upload /></Layout>} />
+          <Route path="/profissional" element={<ProfissionalDashboard />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
