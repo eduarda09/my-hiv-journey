@@ -88,15 +88,7 @@ export const mockPatients: Patient[] = [
     consecutiveDays: 12,
     riskLevel: 'medium',
   },
-  {
-    id: 'p4',
-    name: 'Ana Costa',
-    age: 35,
-    lastActivity: '2024-01-15T09:15:00',
-    adherenceRate: 88,
-    consecutiveDays: 30,
-    riskLevel: 'low',
-  },
+
 ];
 
 // Mock Health Professionals
@@ -165,20 +157,7 @@ export const mockAlerts: Alert[] = [
     createdAt: '2025-12-11T06:00:00',
     updatedAt: '2025-12-10T06:30:00',
   },
-  {
-    id: 'a5',
-    patientId: 'p4',
-    patientName: 'Ana Costa',
-    eventId: 'e5',
-    severity: 'attention',
-    status: 'pending',
-    title: 'Sintomas de efeitos colaterais',
-    description: 'Paciente relatou náuseas frequentes e tontura nos últimos 2 dias.',
-    recommendation: 'Avaliar necessidade de ajuste na medicação ou horário de administração.',
-    assignedTo: ['medico', 'enfermeiro'],
-    createdAt: '2025-12-13T11:00:00',
-    updatedAt: '2025-12-12T11:00:00',
-  },
+
 ];
 
 // Mock Notifications for Patients
@@ -305,8 +284,8 @@ export const getRoleLabel = (role: ProfessionalRole) => {
 
 export const getNotificationIcon = (type: PatientNotification['type']) => {
   switch (type) {
-    case 'support':
-      return '💙';
+    case "support":
+      return '🩹';
     case 'reminder':
       return '⏰';
     case 'achievement':
