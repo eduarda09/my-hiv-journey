@@ -2,6 +2,8 @@ import { ReactNode } from "react";
 import { Home, Calendar, Bell, Upload, BarChart3 } from "lucide-react";
 import { NavLink } from "./NavLink";
 import logo from "@/assets/logo.png";
+import { Button } from "@/components/ui/button";
+
 
 interface LayoutProps {
   children: ReactNode;
@@ -16,10 +18,14 @@ const Layout = ({ children }: LayoutProps) => {
     { to: "/upload", icon: Upload, label: "Exames" },
   ];
 
+  const unreadNotificationsCount = 3;
+
+
   return (
     <div className="min-h-screen bg-background flex flex-col">
       <header className="bg-card border-b border-border sticky top-0 z-50 shadow-sm">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
+          {/* Logo */}
           <div className="flex items-center gap-3">
             <img src={logo} alt="I=I Inde." className="h-20 w-20" />
             <div>
@@ -28,6 +34,7 @@ const Layout = ({ children }: LayoutProps) => {
           </div>
         </div>
       </header>
+
 
       <main className="flex-1 container mx-auto px-4 py-6 pb-24">
         {children}
@@ -45,7 +52,20 @@ const Layout = ({ children }: LayoutProps) => {
               >
                 {({ isActive }) => (
                   <>
-                    <item.icon className={`h-5 w-5 ${isActive ? 'text-primary' : 'text-muted-foreground'}`} />
+                    <div className="relative">
+                      <item.icon
+                        className={`h-5 w-5 ${isActive ? "text-primary" : "text-muted-foreground"}`}
+                      />
+
+                      {item.to === "/notificacoes" && unreadNotificationsCount > 0 && (
+                        <span className="absolute -top-1 -right-2 min-w-[18px] h-[18px] px-1
+                          flex items-center justify-center
+                          rounded-full bg-destructive text-[10px] font-bold text-white
+                          leading-none">
+                          {unreadNotificationsCount}
+                        </span>
+                      )}
+                    </div>
                     <span className={`text-xs ${isActive ? 'text-primary font-medium' : 'text-muted-foreground'}`}>
                       {item.label}
                     </span>
